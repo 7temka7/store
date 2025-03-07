@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница товара</title>
+  <style>
+    .product-page {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-images {
+      flex: 1;
+    }
+    .product-info {
+      flex: 1;
+    }
+    .product-images img {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Мебельный магазин</div>
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">Каталог</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </header>
+  <section class="product-page">
+    <div class="product-images">
+      <img src="sofa.jpg" alt="Диван">
+    </div>
+    <div class="product-info">
+      <h1>Диван</h1>
+      <p>Описание: Удобный и стильный диван для вашей гостиной.</p>
+      <p>Цена: 15 000 руб.</p>
+      <button>Добавить в корзину</button>
+    </div>
+  </section>
+</body>
+</html>
