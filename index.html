@@ -3,56 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мебельный магазин</title>
+    <title>Мебельный магазин | Главная</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Шапка -->
-    <header>
-        <div class="logo">Мебельный магазин</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Мебель<span>PRO</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="#">🛒 Корзина</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Баннер с акцией -->
+    <!-- Баннер -->
     <section class="banner">
-        <img src="images/img.jpg" alt="Акция">
-        <div class="banner-text">
-            <h1>Специальное предложение!</h1>
-            <p>Скидки на всю мебель до 50%</p>
+        <div class="container">
+            <h1>Создайте уют в вашем доме</h1>
+            <p>Скидки до 50% на всю мебель!</p>
+            <a href="catalog.html" class="btn">Перейти в каталог</a>
         </div>
     </section>
 
-    <!-- Блок с популярными товарами -->
+    <!-- Популярные товары -->
     <section class="popular-products">
-        <h2>Популярные товары</h2>
-        <div class="products">
-            <div class="product">
-                <img src="images/img.jpg" alt="Товар 1">
-                <h3>Товар 1</h3>
-                <p>Описание товара 1</p>
+        <div class="container">
+            <h2>Популярные товары</h2>
+            <div class="products-grid">
+                <div class="product">
+                    <img src="images/img.jpg" alt="Диван">
+                    <h3>Диван "Комфорт"</h3>
+                    <p>12 999 ₽</p>
+                    <a href="#" class="btn">Купить</a>
+                </div>
+                <div class="product">
+                    <img src="images/img.jpg" alt="Стул">
+                    <h3>Стул "Элегант"</h3>
+                    <p>3 499 ₽</p>
+                    <a href="#" class="btn">Купить</a>
+                </div>
+                <div class="product">
+                    <img src="images/img.jpg" alt="Стол">
+                    <h3>Стол "Минимализм"</h3>
+                    <p>8 999 ₽</p>
+                    <a href="#" class="btn">Купить</a>
+                </div>
             </div>
-            <div class="product">
-                <img src="images/img.jpg" alt="Товар 2">
-                <h3>Товар 2</h3>
-                <p>Описание товара 2</p>
-            </div>
-            <div class="product">
-                <img src="images/img.jpg" alt="Товар 3">
-                <h3>Товар 3</h3>
-                <p>Описание товара 3</p>
-            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="about">
+        <div class="container">
+            <h2>О нас</h2>
+            <p>Мы — современный мебельный магазин, который предлагает стильную и качественную мебель для вашего дома. Наша миссия — сделать ваш дом уютным и комфортным.</p>
         </div>
     </section>
 
     <!-- Подвал -->
-    <footer>
-        <p>&copy; 2023 Мебельный магазин. Все права защищены.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Мебель<span>PRO</span></div>
+            <div class="footer-links">
+                <a href="#">Главная</a>
+                <a href="#">Каталог</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="social">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
