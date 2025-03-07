@@ -1,0 +1,108 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Баннер */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Блок с товарами */
+.products {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.product {
+  text-align: center;
+  width: 30%;
+}
+
+/* Подвал */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* Каталог */
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.item {
+  width: calc(33.33% - 20px);
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.item img {
+  max-width: 100%;
+}
+
+/* Страница товара */
+.product-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-images {
+  flex: 1;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-images img {
+  max-width: 100%;
+}
+
+/* Кнопка */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
