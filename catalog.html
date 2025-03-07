@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка -->
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">
@@ -46,115 +45,7 @@
 
     <main class="popular-products">
         <div class="products-grid" id="productsGrid">
-            <!-- 12 товаров с data-атрибутами -->
-            <div class="product-card" data-price="25000" data-rating="4.9">
-                <img src="images/img.jpg" alt="Диван Modern">
-                <div class="product-info">
-                    <h3>Диван Modern</h3>
-                    <p class="price">25 000 ₽</p>
-                    <div class="rating">★★★★☆ 4.9</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="15000" data-rating="4.7">
-                <img src="images/img.jpg" alt="Кресло Premium">
-                <div class="product-info">
-                    <h3>Кресло Premium</h3>
-                    <p class="price">15 000 ₽</p>
-                    <div class="rating">★★★★☆ 4.7</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="18000" data-rating="4.5">
-                <img src="images/img.jpg" alt="Стол обеденный">
-                <div class="product-info">
-                    <h3>Стол обеденный</h3>
-                    <p class="price">18 000 ₽</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                </div>
-            </div>
-
-            <!-- Остальные 9 товаров -->
-            <div class="product-card" data-price="32000" data-rating="4.8">
-                <img src="images/img.jpg" alt="Шкаф-купе">
-                <div class="product-info">
-                    <h3>Шкаф-купе</h3>
-                    <p class="price">32 000 ₽</p>
-                    <div class="rating">★★★★☆ 4.8</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="8500" data-rating="4.6">
-                <img src="images/img.jpg" alt="Стул офисный">
-                <div class="product-info">
-                    <h3>Стул офисный</h3>
-                    <p class="price">8 500 ₽</p>
-                    <div class="rating">★★★★☆ 4.6</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="42000" data-rating="5.0">
-                <img src="images/img.jpg" alt="Гарнитур спальный">
-                <div class="product-info">
-                    <h3>Гарнитур спальный</h3>
-                    <p class="price">42 000 ₽</p>
-                    <div class="rating">★★★★★ 5.0</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="12000" data-rating="4.4">
-                <img src="images/img.jpg" alt="Тумба прикроватная">
-                <div class="product-info">
-                    <h3>Тумба прикроватная</h3>
-                    <p class="price">12 000 ₽</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="27500" data-rating="4.7">
-                <img src="images/img.jpg" alt="Комод">
-                <div class="product-info">
-                    <h3>Комод</h3>
-                    <p class="price">27 500 ₽</p>
-                    <div class="rating">★★★★☆ 4.7</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="19500" data-rating="4.3">
-                <img src="images/img.jpg" alt="Пуф">
-                <div class="product-info">
-                    <h3>Пуф</h3>
-                    <p class="price">19 500 ₽</p>
-                    <div class="rating">★★★★☆ 4.3</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="36500" data-rating="4.9">
-                <img src="images/img.jpg" alt="Стенка">
-                <div class="product-info">
-                    <h3>Стенка</h3>
-                    <p class="price">36 500 ₽</p>
-                    <div class="rating">★★★★★ 4.9</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="9500" data-rating="4.2">
-                <img src="images/img.jpg" alt="Стеллаж">
-                <div class="product-info">
-                    <h3>Стеллаж</h3>
-                    <p class="price">9 500 ₽</p>
-                    <div class="rating">★★★★☆ 4.2</div>
-                </div>
-            </div>
-
-            <div class="product-card" data-price="28000" data-rating="4.8">
-                <img src="images/img.jpg" alt="Диван-кровать">
-                <div class="product-info">
-                    <h3>Диван-кровать</h3>
-                    <p class="price">28 000 ₽</p>
-                    <div class="rating">★★★★☆ 4.8</div>
-                </div>
-            </div>
+            <!-- Товары будут сгенерированы скриптом -->
         </div>
     </main>
 
@@ -163,34 +54,54 @@
     </footer>
 
     <script>
-        // Сортировка товаров
-        const sortSelect = document.getElementById('sortSelect');
-        const productsGrid = document.getElementById('productsGrid');
-        let products = Array.from(productsGrid.children);
+        // Данные товаров (синхронизированы с product.html)
+        const products = [
+            {
+                id: 1,
+                name: "Диван Modern",
+                price: 25000,
+                rating: 4.9,
+                category: "Диваны",
+                image: "img.jpg"
+            },
+            {
+                id: 2,
+                name: "Кресло Premium",
+                price: 15000,
+                rating: 4.7,
+                category: "Кресла",
+                image: "img.jpg"
+            },
+            // Остальные товары...
+        ];
 
-        sortSelect.addEventListener('change', () => {
-            const sortBy = sortSelect.value;
-            
-            products.sort((a, b) => {
-                const priceA = parseInt(a.dataset.price);
-                const priceB = parseInt(b.dataset.price);
-                const ratingA = parseFloat(a.dataset.rating);
-                const ratingB = parseFloat(b.dataset.rating);
+        // Генерация карточек товаров
+        function renderProducts(productsArray) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = productsArray.map(product => `
+                <a href="product.html?id=${product.id}" class="product-card">
+                    <img src="images/${product.image}" alt="${product.name}">
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p class="price">${product.price.toLocaleString()} ₽</p>
+                        <div class="rating">${'★'.repeat(5)}</div>
+                    </div>
+                </a>
+            `).join('');
+        }
 
-                switch(sortBy) {
-                    case 'price-asc':
-                        return priceA - priceB;
-                    case 'price-desc':
-                        return priceB - priceA;
-                    case 'rating':
-                        return ratingB - ratingA;
-                    default:
-                        return 0;
-                }
+        // Первоначальная отрисовка
+        renderProducts(products);
+
+        // Логика сортировки
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            const sorted = [...products].sort((a, b) => {
+                if(e.target.value === 'price-asc') return a.price - b.price;
+                if(e.target.value === 'price-desc') return b.price - a.price;
+                if(e.target.value === 'rating') return b.rating - a.rating;
+                return 0;
             });
-
-            productsGrid.innerHTML = '';
-            products.forEach(product => productsGrid.appendChild(product));
+            renderProducts(sorted);
         });
     </script>
 </body>
