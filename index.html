@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка -->
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">
@@ -25,9 +24,7 @@
         </div>
     </header>
 
-    <!-- Основной контент -->
     <main>
-        <!-- Баннер с акцией -->
         <section class="banner">
             <div class="banner-content">
                 <h1>Распродажа мебели!</h1>
@@ -36,30 +33,12 @@
             </div>
         </section>
 
-        <!-- Популярные товары -->
         <section class="popular-products">
             <h2>Популярные товары</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="images/img.jpg" alt="Товар 1">
-                    <h3>Диван Modern</h3>
-                    <p class="price">25 000 ₽</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/img.jpg" alt="Товар 2">
-                    <h3>Кресло Premium</h3>
-                    <p class="price">15 000 ₽</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/img.jpg" alt="Товар 3">
-                    <h3>Стол обеденный</h3>
-                    <p class="price">18 000 ₽</p>
-                </div>
-            </div>
+            <div class="products-grid" id="homeProducts"></div>
         </section>
     </main>
 
-    <!-- Подвал -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -78,5 +57,21 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/products.js"></script>
+    <script>
+        // Отображение популярных товаров на главной
+        const homeProducts = Object.values(products).slice(0, 3);
+        document.getElementById('homeProducts').innerHTML = homeProducts.map(product => `
+            <div class="product-card">
+                <img src="images/${product.images[0]}" alt="${product.name}">
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price.toLocaleString()} ₽</p>
+                    <a href="product.html?id=${product.id}" class="btn">Подробнее</a>
+                </div>
+            </div>
+        `).join('');
+    </script>
 </body>
 </html>
