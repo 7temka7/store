@@ -3,8 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Диван - Мебельный магазин</title>
+  <title>Страница товара - Мебельный магазин</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Получаем параметры из URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    // Данные о товарах
+    const products = {
+      'sofa': {
+        name: 'Диван',
+        description: 'Удобный и стильный диван для вашей гостиной.',
+        price: '15 000 руб.',
+        image: 'images/sofa.jpg'
+      },
+      'chair': {
+        name: 'Кресло',
+        description: 'Мягкое кресло для комфортного отдыха.',
+        price: '8 000 руб.',
+        image: 'images/chair.jpg'
+      },
+      'table': {
+        name: 'Стол',
+        description: 'Прочный и современный стол для вашей кухни.',
+        price: '10 000 руб.',
+        image: 'images/table.jpg'
+      }
+    };
+
+    // Загружаем данные о товаре
+    window.onload = function() {
+      const product = products[productId];
+      if (product) {
+        document.querySelector('.product-images img').src = product.image;
+        document.querySelector('.product-info h1').textContent = product.name;
+        document.querySelector('.product-info p').textContent = product.description;
+        document.querySelector('.product-info p:nth-of-type(2)').textContent = `Цена: ${product.price}`;
+      }
+    };
+  </script>
 </head>
 <body>
   <header class="header">
@@ -17,12 +55,12 @@
   </header>
   <section class="product-page">
     <div class="product-images">
-      <img src="images/sofa.jpg" alt="Диван">
+      <img src="" alt="Изображение товара">
     </div>
     <div class="product-info">
-      <h1>Диван</h1>
-      <p>Описание: Удобный и стильный диван для вашей гостиной.</p>
-      <p>Цена: 15 000 руб.</p>
+      <h1></h1>
+      <p></p>
+      <p></p>
       <button>Добавить в корзину</button>
     </div>
   </section>
