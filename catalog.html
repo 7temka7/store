@@ -3,77 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог мебели | Furniture Store</title>
+    <title>Каталог мебели</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- 1. Шапка идентичная главной -->
     <header class="header">
-        <!-- Такая же шапка как на главной -->
+        <div class="header-content">
+            <a href="/" class="logo">
+                <img src="images/img.jpg" alt="Логотип" class="logo-img">
+                <span>Furniture Store</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="catalog.html" class="active">Каталог</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#cart">Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="catalog-main">
-        <div class="catalog-container">
-            <!-- Фильтры -->
-            <aside class="catalog-filters">
-                <section class="filter-section">
-                    <h3>Категории</h3>
-                    <ul class="filter-list">
-                        <li><label><input type="checkbox"> Диваны</label></li>
-                        <li><label><input type="checkbox"> Кресла</label></li>
-                        <li><label><input type="checkbox"> Столы</label></li>
-                    </ul>
-                </section>
+    <!-- 2. Баннер в том же стиле -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Весь каталог мебели</h1>
+            <p>Более 500 моделей для вашего дома</p>
+        </div>
+    </section>
 
-                <section class="filter-section">
-                    <h3>Цена, ₽</h3>
-                    <div class="price-range">
-                        <input type="number" placeholder="От" class="price-input">
-                        <input type="number" placeholder="До" class="price-input">
-                    </div>
-                </section>
-
-                <button class="filter-btn">Применить фильтры</button>
-            </aside>
-
-            <!-- Сетка товаров -->
-            <section class="catalog-products">
-                <div class="catalog-header">
-                    <h1>Каталог мебели</h1>
-                    <select class="sort-select">
-                        <option>По популярности</option>
-                        <option>По возрастанию цены</option>
-                        <option>По убыванию цены</option>
-                    </select>
+    <!-- 3. Сетка товаров как на главной -->
+    <main class="popular-products">
+        <div class="products-grid">
+            <!-- Повторяем блоки товаров -->
+            <div class="product-card">
+                <img src="images/img.jpg" alt="Диван Modern">
+                <div class="product-info">
+                    <h3>Диван Modern</h3>
+                    <p class="price">25 000 ₽</p>
                 </div>
+            </div>
 
-                <div class="products-grid">
-                    <!-- Повторить 9 раз -->
-                    <article class="product-card catalog-card">
-                        <img src="images/img.jpg" alt="Товар" loading="lazy">
-                        <div class="product-info">
-                            <h3>Диван Modern Pro</h3>
-                            <div class="rating">
-                                ★★★★★ <span>(128)</span>
-                            </div>
-                            <p class="price">34 900 ₽</p>
-                            <button class="cart-btn">В корзину</button>
-                        </div>
-                    </article>
+            <div class="product-card">
+                <img src="images/img.jpg" alt="Кресло Premium">
+                <div class="product-info">
+                    <h3>Кресло Premium</h3>
+                    <p class="price">15 000 ₽</p>
                 </div>
+            </div>
 
-                <!-- Пагинация -->
-                <div class="pagination">
-                    <a href="#" class="page-link active">1</a>
-                    <a href="#" class="page-link">2</a>
-                    <a href="#" class="page-link">3</a>
-                    <span class="page-link">...</span>
-                </div>
-            </section>
+            <!-- Добавляем 10 аналогичных блоков -->
+            <!-- ... -->
+            
         </div>
     </main>
 
+    <!-- 4. Подвал идентичный главной -->
     <footer class="footer">
-        <!-- Такой же подвал как на главной -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О нас</h4>
+                <p>Лучшая мебель с 2020 года</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>info@furniture.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Соцсети</h4>
+                <a href="#">VK</a>
+                <a href="#">Telegram</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
