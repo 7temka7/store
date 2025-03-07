@@ -283,3 +283,20 @@ body {
         align-items: flex-start;
     }
 }
+
+/* Стили для рейтинга */
+.rating {
+    color: #ff9900;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Анимация сортировки */
+.products-grid {
+    transition: opacity 0.3s ease;
+}
+
+.products-grid.sorting {
+    opacity: 0.5;
+    pointer-events: none;
+}
