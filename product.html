@@ -3,85 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Диван Modern Pro | Furniture Store</title>
+    <title>Товар - Мебельный магазин</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="header">
-        <!-- Такая же шапка как на главной -->
-    </header>
+    <!-- Шапка (как на главной) -->
+    <header class="header">...</header>
 
-    <main class="product-main">
-        <!-- Хлебные крошки -->
-        <nav class="breadcrumbs">
-            <a href="/">Главная</a> / 
-            <a href="catalog.html">Каталог</a> / 
-            <span>Диван Modern Pro</span>
-        </nav>
-
-        <!-- Основной блок товара -->
-        <section class="product-container">
-            <!-- Галерея изображений -->
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img src="images/img.jpg" alt="Основное фото" class="zoomable">
-                </div>
-                <div class="thumbnails">
-                    <img src="images/img.jpg" alt="Превью 1">
-                    <img src="images/img.jpg" alt="Превью 2">
-                    <img src="images/img.jpg" alt="Превью 3">
-                </div>
-            </div>
-
-            <!-- Информация о товаре -->
-            <div class="product-details">
-                <h1>Диван Modern Pro</h1>
-                <div class="product-meta">
-                    <span class="sku">Артикул: MF12345</span>
-                    <div class="rating">
-                        ★★★★★ <span>(128 отзывов)</span>
-                    </div>
-                </div>
-
-                <div class="price-block">
-                    <p class="price">34 900 ₽</p>
-                    <p class="old-price">42 000 ₽</p>
-                    <span class="discount">-17%</span>
-                </div>
-
-                <div class="product-actions">
-                    <div class="quantity">
-                        <button class="qty-btn">-</button>
-                        <input type="number" value="1" min="1">
-                        <button class="qty-btn">+</button>
-                    </div>
-                    <button class="cart-btn big">Добавить в корзину</button>
-                </div>
-
-                <!-- Характеристики -->
-                <div class="specs">
-                    <h3>Характеристики</h3>
-                    <dl class="specs-list">
-                        <dt>Материал:</dt>
-                        <dd>Экокожа</dd>
-                        <dt>Размеры:</dt>
-                        <dd>200×90×75 см</dd>
-                        <dt>Цвет:</dt>
-                        <dd>Серый графит</dd>
-                    </dl>
-                </div>
-            </div>
-        </section>
-
-        <!-- Описание -->
-        <section class="product-description">
-            <h2>Описание товара</h2>
-            <p>Современный диван с эргономичной поддержкой спины...</p>
-        </section>
+    <main class="product-page" id="productContainer">
+        <!-- Контент будет сгенерирован JavaScript -->
     </main>
 
-    <footer class="footer">
-        <!-- Такой же подвал как на главной -->
-    </footer>
+    <!-- Подвал (как на главной) -->
+    <footer class="footer">...</footer>
+
+    <!-- Данные товаров -->
+    <script>
+        const products = {
+            "1": {
+                id: 1,
+                name: "Диван Modern",
+                price: 25000,
+                oldPrice: 35000,
+                category: "Диваны",
+                rating: 4.9,
+                reviews: 128,
+                sku: "DM-2023",
+                description: "Современный диван из экологичной кожи...",
+                specs: {
+                    material: "Экокожа",
+                    color: "Серый",
+                    size: "220×90×75 см",
+                    weight: "85 кг"
+                },
+                images: ["img.jpg", "img.jpg", "img.jpg"]
+            },
+            "2": {
+                id: 2,
+                name: "Кресло Premium",
+                price: 15000,
+                category: "Кресла",
+                rating: 4.7,
+                reviews: 95,
+                sku: "KP-2023",
+                description: "Эргономичное кресло премиум-класса...",
+                specs: {
+                    material: "Текстиль",
+                    color: "Бежевый",
+                    size: "90×90×100 см",
+                    weight: "25 кг"
+                },
+                images: ["img.jpg", "img.jpg", "img.jpg"]
+            }
+        };
+
+        // Получаем ID товара из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        
+        // Находим товар
+        const product = products[productId];
+
+        // Генерируем HTML
+        if(product) {
+            document.title = product.name + " - Мебельный магазин";
+            
+            const productHTML = `
+                <!-- Хлебные крошки -->
+                <nav class="breadcrumbs">
+                    <a href="/">Главная</a> / 
+                    <a href="catalog.html">Каталог</a> / 
+                    <span>${product.name}</span>
+                </nav>
+
+                <!-- Основная информация -->
+                <section class="product-main">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="images/${product.images[0]}" alt="${product.name}">
+                        </div>
+                        <div class="thumbnails">
+                            ${product.images.map(img => `
+                                <img src="images/${img}" alt="Превью">
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <h1>${product.name}</h1>
+                        
+                        <div class="product-meta">
+                            <span class="sku">Артикул: ${product.sku}</span>
+                            <div class="rating">
+                                ${'★'.repeat(5)} <span>(${product.reviews} отзывов)</span>
+                            </div>
+                        </div>
+
+                        <div class="price-block">
+                            <span class="price">${product.price.toLocaleString()} ₽</span>
+                            ${product.oldPrice ? `
+                                <span class="old-price">${product.oldPrice.toLocaleString()} ₽</span>
+                            ` : ''}
+                        </div>
+
+                        <div class="product-actions">
+                            <div class="quantity">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" value="1" min="1">
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                            <button class="add-to-cart">В корзину</button>
+                        </div>
+
+                        <div class="product-description">
+                            <h3>Описание</h3>
+                            <p>${product.description}</p>
+                        </div>
+
+                        <div class="product-specs">
+                            <h3>Характеристики</h3>
+                            <ul>
+                                ${Object.entries(product.specs).map(([key, value]) => `
+                                    <li><strong>${key}:</strong> ${value}</li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Похожие товары -->
+                <section class="related-products">
+                    <h2>Похожие товары</h2>
+                    <div class="products-grid">
+                        ${Object.values(products)
+                            .filter(p => p.id !== product.id && p.category === product.category)
+                            .slice(0, 3)
+                            .map(p => `
+                                <a href="product.html?id=${p.id}" class="product-card">
+                                    <img src="images/${p.images[0]}" alt="${p.name}">
+                                    <div class="product-info">
+                                        <h3>${p.name}</h3>
+                                        <p class="price">${p.price.toLocaleString()} ₽</p>
+                                    </div>
+                                </a>
+                            `).join('')}
+                    </div>
+                </section>
+            `;
+
+            document.getElementById('productContainer').innerHTML = productHTML;
+        } else {
+            document.getElementById('productContainer').innerHTML = `
+                <div class="error-message">
+                    <h2>Товар не найден</h2>
+                    <a href="catalog.html" class="btn">Вернуться в каталог</a>
+                </div>
+            `;
+        }
+
+        // Логика для количества товара
+        document.addEventListener('click', function(e) {
+            if(e.target.classList.contains('qty-btn')) {
+                const input = e.target.parentElement.querySelector('input');
+                let value = parseInt(input.value);
+                
+                if(e.target.classList.contains('minus')) {
+                    value = value > 1 ? value - 1 : 1;
+                } else {
+                    value += 1;
+                }
+                
+                input.value = value;
+            }
+        });
+    </script>
 </body>
 </html>
