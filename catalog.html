@@ -44,43 +44,20 @@
     </div>
 
     <main class="popular-products">
-        <div class="products-grid" id="productsGrid">
-            <!-- Товары будут сгенерированы скриптом -->
-        </div>
+        <div class="products-grid" id="productsGrid"></div>
     </main>
 
     <footer class="footer">
         <!-- Подвал как на главной -->
     </footer>
 
+    <script src="js/products.js"></script>
     <script>
-        // Данные товаров (синхронизированы с product.html)
-        const products = [
-            {
-                id: 1,
-                name: "Диван Modern",
-                price: 25000,
-                rating: 4.9,
-                category: "Диваны",
-                image: "img.jpg"
-            },
-            {
-                id: 2,
-                name: "Кресло Premium",
-                price: 15000,
-                rating: 4.7,
-                category: "Кресла",
-                image: "img.jpg"
-            },
-            // Остальные товары...
-        ];
-
-        // Генерация карточек товаров
         function renderProducts(productsArray) {
             const grid = document.getElementById('productsGrid');
             grid.innerHTML = productsArray.map(product => `
                 <a href="product.html?id=${product.id}" class="product-card">
-                    <img src="images/${product.image}" alt="${product.name}">
+                    <img src="images/${product.images[0]}" alt="${product.name}">
                     <div class="product-info">
                         <h3>${product.name}</h3>
                         <p class="price">${product.price.toLocaleString()} ₽</p>
@@ -91,11 +68,12 @@
         }
 
         // Первоначальная отрисовка
-        renderProducts(products);
+        let allProducts = Object.values(products);
+        renderProducts(allProducts);
 
-        // Логика сортировки
+        // Сортировка
         document.getElementById('sortSelect').addEventListener('change', (e) => {
-            const sorted = [...products].sort((a, b) => {
+            const sorted = [...allProducts].sort((a, b) => {
                 if(e.target.value === 'price-asc') return a.price - b.price;
                 if(e.target.value === 'price-desc') return b.price - a.price;
                 if(e.target.value === 'rating') return b.rating - a.rating;
