@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- 1. Шапка идентичная главной -->
+    <!-- Шапка -->
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">
@@ -25,18 +25,31 @@
         </div>
     </header>
 
-    <!-- 2. Баннер в том же стиле -->
+    <!-- Баннер -->
     <section class="banner">
         <div class="banner-content">
-            <h1>Весь каталог мебели</h1>
-            <p>Более 500 моделей для вашего дома</p>
+            <h1>Каталог мебели</h1>
+            <p>Более 500 моделей для вашего интерьера</p>
         </div>
     </section>
 
-    <!-- 3. Сетка товаров как на главной -->
+    <!-- Сортировка -->
+    <div class="sorting-container">
+        <div class="sorting">
+            <span class="sort-label">Сортировка:</span>
+            <select class="sort-select">
+                <option value="default">По умолчанию</option>
+                <option value="price-asc">По возрастанию цены</option>
+                <option value="price-desc">По убыванию цены</option>
+                <option value="popular">По популярности</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Сетка товаров -->
     <main class="popular-products">
         <div class="products-grid">
-            <!-- Повторяем блоки товаров -->
+            <!-- 12 товаров -->
             <div class="product-card">
                 <img src="images/img.jpg" alt="Диван Modern">
                 <div class="product-info">
@@ -53,29 +66,32 @@
                 </div>
             </div>
 
-            <!-- Добавляем 10 аналогичных блоков -->
+            <div class="product-card">
+                <img src="images/img.jpg" alt="Диван 2">
+                <div class="product-info">
+                    <h3>Диван Modern</h3>
+                    <p class="price">20 000 ₽</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/img.jpg" alt="Кресло 2">
+                <div class="product-info">
+                    <h3>Кресло Premium</h3>
+                    <p class="price">10 000 ₽</p>
+                </div>
+            </div>
+
+            <!-- Остальные 10 товаров с разными названиями и ценами -->
             <!-- ... -->
             
         </div>
     </main>
 
-    <!-- 4. Подвал идентичный главной -->
+    <!-- Подвал -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>О нас</h4>
-                <p>Лучшая мебель с 2020 года</p>
-            </div>
-            <div class="footer-section">
-                <h4>Контакты</h4>
-                <p>+7 (999) 123-45-67</p>
-                <p>info@furniture.ru</p>
-            </div>
-            <div class="footer-section">
-                <h4>Соцсети</h4>
-                <a href="#">VK</a>
-                <a href="#">Telegram</a>
-            </div>
+            <!-- Как на главной -->
         </div>
     </footer>
 </body>
