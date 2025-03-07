@@ -136,6 +136,9 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid #eee;
     text-align: center; /* Центрируем текст внутри карточки */
+    display: flex;
+    flex-direction: column; /* Делаем карточку колонкой */
+    align-items: center; /* Центрируем элементы по горизонтали */
 }
 
 .product-card:hover {
@@ -152,6 +155,7 @@ main {
 .product-info {
     padding: 1.5rem;
     text-align: center; /* Центрируем текст внутри .product-info */
+    width: 100%; /* Занимает всю ширину карточки */
 }
 
 .product-info h3 {
