@@ -300,3 +300,55 @@ body {
     opacity: 0.5;
     pointer-events: none;
 }
+
+/* Страница товара */
+.error-message {
+    text-align: center;
+    padding: 4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #ff9900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.product-card {
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Добавляем стиль для ссылок-карточек */
+.product-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Исправляем z-index для выпадающего списка */
+.sort-select {
+    z-index: 2;
+    position: relative;
+}
+
+/* Улучшаем отображение карточек как ссылок */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .product-card {
+        margin: 0 10px;
+    }
+}
