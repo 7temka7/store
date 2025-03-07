@@ -33,7 +33,7 @@ main {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Отступы по бокам */
+    padding: 0 20px; /* Отступы по бокам только для контейнера */
 }
 
 /* Шапка */
@@ -48,7 +48,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .logo {
@@ -93,7 +92,6 @@ main {
 
 .banner-content {
     max-width: 800px;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .banner h1 {
@@ -126,7 +124,6 @@ main {
     gap: 2rem;
     justify-content: center;
     margin-bottom: 3rem;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .product-card {
@@ -175,7 +172,6 @@ main {
 /* Сортировка */
 .sorting-container {
     margin: 2rem 0;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .sorting {
@@ -215,7 +211,6 @@ main {
     margin: 1rem 0 2rem;
     font-size: 0.9rem;
     color: #666;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .breadcrumbs a {
@@ -231,7 +226,6 @@ main {
     display: flex;
     gap: 2rem;
     margin-bottom: 3rem;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .product-gallery {
@@ -348,7 +342,6 @@ main {
 
 .related-products {
     margin: 4rem 0;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 /* Подвал */
@@ -365,7 +358,6 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
 .footer-section {
