@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товар - Мебельный магазин</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- Шапка -->
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">
-                <img src="images/img.jpg" alt="Логотип" class="logo-img">
+                <img src="../images/img.jpg" alt="Логотип" class="logo-img">
                 <span>Furniture Store</span>
             </a>
             <nav class="main-nav">
@@ -25,69 +24,14 @@
         </div>
     </header>
 
-    <main class="product-page" id="productContainer">
-        <!-- Контент будет сгенерирован JavaScript -->
-    </main>
+    <main class="product-page" id="productContainer"></main>
 
-    <!-- Подвал -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>О нас</h4>
-                <p>Лучшая мебель с 2020 года</p>
-            </div>
-            <div class="footer-section">
-                <h4>Контакты</h4>
-                <p>+7 (999) 123-45-67</p>
-                <p>info@furniture.ru</p>
-            </div>
-            <div class="footer-section">
-                <h4>Соцсети</h4>
-                <a href="#">VK</a>
-                <a href="#">Telegram</a>
-            </div>
-        </div>
+        <!-- Подвал как на главной -->
     </footer>
 
+    <script src="../js/products.js"></script>
     <script>
-        const products = {
-            "1": {
-                id: 1,
-                name: "Диван Modern",
-                price: 25000,
-                oldPrice: 35000,
-                category: "Диваны",
-                rating: 4.9,
-                reviews: 128,
-                sku: "DM-2023",
-                description: "Современный диван из экологичной кожи. Каркас из массива дуба, механизм трансформации «еврокнижка», дополнительные ящики для хранения.",
-                specs: {
-                    материал: "Экокожа",
-                    цвет: "Серый",
-                    размеры: "220×90×75 см",
-                    вес: "85 кг"
-                },
-                images: ["img.jpg", "img.jpg", "img.jpg"]
-            },
-            "2": {
-                id: 2,
-                name: "Кресло Premium",
-                price: 15000,
-                category: "Кресла",
-                rating: 4.7,
-                reviews: 95,
-                sku: "KP-2023",
-                description: "Эргономичное кресло премиум-класса с регулируемой спинкой и подлокотниками.",
-                specs: {
-                    материал: "Текстиль",
-                    цвет: "Бежевый",
-                    размеры: "90×90×100 см",
-                    вес: "25 кг"
-                },
-                images: ["img.jpg", "img.jpg", "img.jpg"]
-            }
-        };
-
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         const product = products[productId];
@@ -105,23 +49,20 @@
                 <section class="product-main">
                     <div class="product-gallery">
                         <div class="main-image">
-                            <img src="images/${product.images[0]}" alt="${product.name}">
+                            <img src="../images/${product.images[0]}" alt="${product.name}">
                         </div>
                         <div class="thumbnails">
                             ${product.images.map(img => `
-                                <img src="images/${img}" alt="Превью">
+                                <img src="../images/${img}" alt="Превью" onclick="document.querySelector('.main-image img').src = this.src">
                             `).join('')}
                         </div>
                     </div>
 
                     <div class="product-info">
                         <h1>${product.name}</h1>
-                        
                         <div class="product-meta">
                             <span class="sku">Артикул: ${product.sku}</span>
-                            <div class="rating">
-                                ${'★'.repeat(5)} <span>(${product.reviews} отзывов)</span>
-                            </div>
+                            <div class="rating">${'★'.repeat(5)}</div>
                         </div>
 
                         <div class="price-block">
@@ -155,24 +96,6 @@
                         </div>
                     </div>
                 </section>
-
-                <section class="related-products">
-                    <h2>Похожие товары</h2>
-                    <div class="products-grid">
-                        ${Object.values(products)
-                            .filter(p => p.id !== product.id && p.category === product.category)
-                            .slice(0, 3)
-                            .map(p => `
-                                <a href="product.html?id=${p.id}" class="product-card">
-                                    <img src="images/${p.images[0]}" alt="${p.name}">
-                                    <div class="product-info">
-                                        <h3>${p.name}</h3>
-                                        <p class="price">${p.price.toLocaleString()} ₽</p>
-                                    </div>
-                                </a>
-                            `).join('')}
-                    </div>
-                </section>
             `;
 
             document.getElementById('productContainer').innerHTML = productHTML;
@@ -184,30 +107,6 @@
                 </div>
             `;
         }
-
-        // Логика для количества товара
-        document.addEventListener('click', function(e) {
-            if(e.target.classList.contains('qty-btn')) {
-                const input = e.target.parentElement.querySelector('input');
-                let value = parseInt(input.value);
-                
-                if(e.target.classList.contains('minus')) {
-                    value = value > 1 ? value - 1 : 1;
-                } else {
-                    value += 1;
-                }
-                
-                input.value = value;
-            }
-        });
-
-        // Логика для галереи
-        document.addEventListener('click', function(e) {
-            if(e.target.classList.contains('thumbnails')) {
-                const mainImg = document.querySelector('.main-image img');
-                mainImg.src = e.target.src;
-            }
-        });
     </script>
 </body>
 </html>
