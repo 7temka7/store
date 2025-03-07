@@ -3,28 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товар</title>
+    <title>Диван Modern Pro | Furniture Store</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Мебельный магазин</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <!-- Такая же шапка как на главной -->
     </header>
 
-    <main>
-        <h1>Товар</h1>
-        <p>Здесь будет информация о товаре.</p>
+    <main class="product-main">
+        <!-- Хлебные крошки -->
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a> / 
+            <a href="catalog.html">Каталог</a> / 
+            <span>Диван Modern Pro</span>
+        </nav>
+
+        <!-- Основной блок товара -->
+        <section class="product-container">
+            <!-- Галерея изображений -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="images/img.jpg" alt="Основное фото" class="zoomable">
+                </div>
+                <div class="thumbnails">
+                    <img src="images/img.jpg" alt="Превью 1">
+                    <img src="images/img.jpg" alt="Превью 2">
+                    <img src="images/img.jpg" alt="Превью 3">
+                </div>
+            </div>
+
+            <!-- Информация о товаре -->
+            <div class="product-details">
+                <h1>Диван Modern Pro</h1>
+                <div class="product-meta">
+                    <span class="sku">Артикул: MF12345</span>
+                    <div class="rating">
+                        ★★★★★ <span>(128 отзывов)</span>
+                    </div>
+                </div>
+
+                <div class="price-block">
+                    <p class="price">34 900 ₽</p>
+                    <p class="old-price">42 000 ₽</p>
+                    <span class="discount">-17%</span>
+                </div>
+
+                <div class="product-actions">
+                    <div class="quantity">
+                        <button class="qty-btn">-</button>
+                        <input type="number" value="1" min="1">
+                        <button class="qty-btn">+</button>
+                    </div>
+                    <button class="cart-btn big">Добавить в корзину</button>
+                </div>
+
+                <!-- Характеристики -->
+                <div class="specs">
+                    <h3>Характеристики</h3>
+                    <dl class="specs-list">
+                        <dt>Материал:</dt>
+                        <dd>Экокожа</dd>
+                        <dt>Размеры:</dt>
+                        <dd>200×90×75 см</dd>
+                        <dt>Цвет:</dt>
+                        <dd>Серый графит</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- Описание -->
+        <section class="product-description">
+            <h2>Описание товара</h2>
+            <p>Современный диван с эргономичной поддержкой спины...</p>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Мебельный магазин. Все права защищены.</p>
+    <footer class="footer">
+        <!-- Такой же подвал как на главной -->
     </footer>
 </body>
 </html>
