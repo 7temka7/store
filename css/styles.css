@@ -104,6 +104,19 @@ main {
     margin-bottom: 2rem;
 }
 
+.btn {
+    background: #ff9900;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e68a00;
+}
+
 /* Сетка товаров */
 .products-grid {
     display: flex;
@@ -148,6 +161,11 @@ main {
 .price {
     color: #ff9900;
     font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.rating {
+    color: #ff9900;
     margin-top: 0.5rem;
 }
 
