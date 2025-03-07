@@ -7,17 +7,48 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Шапка (как на главной) -->
-    <header class="header">...</header>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <img src="images/img.jpg" alt="Логотип" class="logo-img">
+                <span>Furniture Store</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#cart">Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main class="product-page" id="productContainer">
         <!-- Контент будет сгенерирован JavaScript -->
     </main>
 
-    <!-- Подвал (как на главной) -->
-    <footer class="footer">...</footer>
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О нас</h4>
+                <p>Лучшая мебель с 2020 года</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>info@furniture.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Соцсети</h4>
+                <a href="#">VK</a>
+                <a href="#">Telegram</a>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Данные товаров -->
     <script>
         const products = {
             "1": {
@@ -29,12 +60,12 @@
                 rating: 4.9,
                 reviews: 128,
                 sku: "DM-2023",
-                description: "Современный диван из экологичной кожи...",
+                description: "Современный диван из экологичной кожи. Каркас из массива дуба, механизм трансформации «еврокнижка», дополнительные ящики для хранения.",
                 specs: {
-                    material: "Экокожа",
-                    color: "Серый",
-                    size: "220×90×75 см",
-                    weight: "85 кг"
+                    материал: "Экокожа",
+                    цвет: "Серый",
+                    размеры: "220×90×75 см",
+                    вес: "85 кг"
                 },
                 images: ["img.jpg", "img.jpg", "img.jpg"]
             },
@@ -46,37 +77,31 @@
                 rating: 4.7,
                 reviews: 95,
                 sku: "KP-2023",
-                description: "Эргономичное кресло премиум-класса...",
+                description: "Эргономичное кресло премиум-класса с регулируемой спинкой и подлокотниками.",
                 specs: {
-                    material: "Текстиль",
-                    color: "Бежевый",
-                    size: "90×90×100 см",
-                    weight: "25 кг"
+                    материал: "Текстиль",
+                    цвет: "Бежевый",
+                    размеры: "90×90×100 см",
+                    вес: "25 кг"
                 },
                 images: ["img.jpg", "img.jpg", "img.jpg"]
             }
         };
 
-        // Получаем ID товара из URL
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-        
-        // Находим товар
         const product = products[productId];
 
-        // Генерируем HTML
         if(product) {
             document.title = product.name + " - Мебельный магазин";
             
             const productHTML = `
-                <!-- Хлебные крошки -->
                 <nav class="breadcrumbs">
                     <a href="/">Главная</a> / 
                     <a href="catalog.html">Каталог</a> / 
                     <span>${product.name}</span>
                 </nav>
 
-                <!-- Основная информация -->
                 <section class="product-main">
                     <div class="product-gallery">
                         <div class="main-image">
@@ -131,7 +156,6 @@
                     </div>
                 </section>
 
-                <!-- Похожие товары -->
                 <section class="related-products">
                     <h2>Похожие товары</h2>
                     <div class="products-grid">
@@ -174,6 +198,14 @@
                 }
                 
                 input.value = value;
+            }
+        });
+
+        // Логика для галереи
+        document.addEventListener('click', function(e) {
+            if(e.target.classList.contains('thumbnails')) {
+                const mainImg = document.querySelector('.main-image img');
+                mainImg.src = e.target.src;
             }
         });
     </script>
