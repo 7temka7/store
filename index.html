@@ -3,86 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мебельный магазин | Главная</title>
+    <title>Furniture Store - Главная</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Шапка -->
     <header class="header">
-        <div class="container">
-            <div class="logo">Мебель<span>PRO</span></div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <img src="images/img.jpg" alt="Логотип" class="logo-img">
+                <span>Furniture Store</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/" class="active">Главная</a></li>
                     <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#cart">Корзина</a></li>
                 </ul>
             </nav>
-            <div class="cart">
-                <a href="#">🛒 Корзина</a>
-            </div>
         </div>
     </header>
 
-    <!-- Баннер -->
-    <section class="banner">
-        <div class="container">
-            <h1>Создайте уют в вашем доме</h1>
-            <p>Скидки до 50% на всю мебель!</p>
-            <a href="catalog.html" class="btn">Перейти в каталог</a>
-        </div>
-    </section>
+    <!-- Основной контент -->
+    <main>
+        <!-- Баннер с акцией -->
+        <section class="banner">
+            <div class="banner-content">
+                <h1>Распродажа мебели!</h1>
+                <p>Скидки до 50% на всю коллекцию</p>
+                <a href="catalog.html" class="btn">Посмотреть товары</a>
+            </div>
+        </section>
 
-    <!-- Популярные товары -->
-    <section class="popular-products">
-        <div class="container">
+        <!-- Популярные товары -->
+        <section class="popular-products">
             <h2>Популярные товары</h2>
             <div class="products-grid">
-                <div class="product">
-                    <img src="images/img.jpg" alt="Диван">
-                    <h3>Диван "Комфорт"</h3>
-                    <p>12 999 ₽</p>
-                    <a href="#" class="btn">Купить</a>
+                <div class="product-card">
+                    <img src="images/img.jpg" alt="Товар 1">
+                    <h3>Диван Modern</h3>
+                    <p class="price">25 000 ₽</p>
                 </div>
-                <div class="product">
-                    <img src="images/img.jpg" alt="Стул">
-                    <h3>Стул "Элегант"</h3>
-                    <p>3 499 ₽</p>
-                    <a href="#" class="btn">Купить</a>
+                <div class="product-card">
+                    <img src="images/img.jpg" alt="Товар 2">
+                    <h3>Кресло Premium</h3>
+                    <p class="price">15 000 ₽</p>
                 </div>
-                <div class="product">
-                    <img src="images/img.jpg" alt="Стол">
-                    <h3>Стол "Минимализм"</h3>
-                    <p>8 999 ₽</p>
-                    <a href="#" class="btn">Купить</a>
+                <div class="product-card">
+                    <img src="images/img.jpg" alt="Товар 3">
+                    <h3>Стол обеденный</h3>
+                    <p class="price">18 000 ₽</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- О нас -->
-    <section class="about">
-        <div class="container">
-            <h2>О нас</h2>
-            <p>Мы — современный мебельный магазин, который предлагает стильную и качественную мебель для вашего дома. Наша миссия — сделать ваш дом уютным и комфортным.</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Подвал -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">Мебель<span>PRO</span></div>
-            <div class="footer-links">
-                <a href="#">Главная</a>
-                <a href="#">Каталог</a>
-                <a href="#">Контакты</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О нас</h4>
+                <p>Лучшая мебель с 2020 года</p>
             </div>
-            <div class="social">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>info@furniture.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Соцсети</h4>
+                <a href="#">VK</a>
+                <a href="#">Telegram</a>
             </div>
         </div>
     </footer>
