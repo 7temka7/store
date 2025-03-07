@@ -3,28 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог</title>
+    <title>Каталог мебели | Furniture Store</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Мебельный магазин</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="#">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <!-- Такая же шапка как на главной -->
     </header>
 
-    <main>
-        <h1>Каталог</h1>
-        <p>Здесь будет каталог товаров.</p>
+    <main class="catalog-main">
+        <div class="catalog-container">
+            <!-- Фильтры -->
+            <aside class="catalog-filters">
+                <section class="filter-section">
+                    <h3>Категории</h3>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox"> Диваны</label></li>
+                        <li><label><input type="checkbox"> Кресла</label></li>
+                        <li><label><input type="checkbox"> Столы</label></li>
+                    </ul>
+                </section>
+
+                <section class="filter-section">
+                    <h3>Цена, ₽</h3>
+                    <div class="price-range">
+                        <input type="number" placeholder="От" class="price-input">
+                        <input type="number" placeholder="До" class="price-input">
+                    </div>
+                </section>
+
+                <button class="filter-btn">Применить фильтры</button>
+            </aside>
+
+            <!-- Сетка товаров -->
+            <section class="catalog-products">
+                <div class="catalog-header">
+                    <h1>Каталог мебели</h1>
+                    <select class="sort-select">
+                        <option>По популярности</option>
+                        <option>По возрастанию цены</option>
+                        <option>По убыванию цены</option>
+                    </select>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Повторить 9 раз -->
+                    <article class="product-card catalog-card">
+                        <img src="images/img.jpg" alt="Товар" loading="lazy">
+                        <div class="product-info">
+                            <h3>Диван Modern Pro</h3>
+                            <div class="rating">
+                                ★★★★★ <span>(128)</span>
+                            </div>
+                            <p class="price">34 900 ₽</p>
+                            <button class="cart-btn">В корзину</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Пагинация -->
+                <div class="pagination">
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <span class="page-link">...</span>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Мебельный магазин. Все права защищены.</p>
+    <footer class="footer">
+        <!-- Такой же подвал как на главной -->
     </footer>
 </body>
 </html>
